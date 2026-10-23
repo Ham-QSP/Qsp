@@ -1,0 +1,5 @@
+{
+  "signalingServerPrefix": "http://${QSP_HOST}:${QSP_PORT}/signaling",
+  "authenticationServerPrefix": "http://${QSP_HOST}:${QSP_PORT}/auth",
+  "portalUrl": "http://${QSP_HOST}:${QSP_PORT}"
+}
