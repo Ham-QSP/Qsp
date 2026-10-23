@@ -60,6 +60,6 @@ Before anyone outside a trusted network can reach the instance:
 - Set **strong passwords** in `.env` instead of the defaults.
 - **Change the admin password.**
 - Use **dedicated database roles** per service instead of the PostgreSQL superuser.
-- Put **TLS** in front of the proxy, and then use `wss://` for agents and `https://` for browsers. Browsers also require a secure context for some features.
+- Put **TLS** in front of the proxy for browsers (`https://`). Note that the agent does **not support `wss://` yet**: agents must still reach the signaling server over plain `ws://`, so keep a plain-HTTP path or port for `/signaling/server/session` reachable to your agents (for example on a trusted network) until TLS support lands in the agent.
 - Remember that the signaling server only checks that a token is valid, not roles, so any signed-in user can manage stations.
 - Without a TURN server, peers behind strict NAT may not be able to connect (see [Troubleshooting](../troubleshooting.md)).

@@ -10,5 +10,6 @@ build-dir = "book"
 [output.html]
 git-repository-url = "https://github.com/Ham-QSP/Qsp"
 edit-url-template = "https://github.com/Ham-QSP/Qsp/edit/main/docs/{path}"
+# Must be changed if a custom domain is used for the site.
 site-url = "/Qsp/docs/"
 additional-js = ["theme/home-link.js"]

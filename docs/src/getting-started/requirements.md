@@ -8,7 +8,7 @@ The computer must be on all the time you want your station to be reachable, and 
 
 ## A radio Hamlib can control
 
-The agent controls your transceiver through [Hamlib](https://hamlib.github.io/). Check that your radio is in the Hamlib list and note its **Hamlib model number** (`rigctl --list` shows them). You also need a way to connect it to the computer, typically a USB or serial CAT cable.
+The agent controls your transceiver through [Hamlib](https://hamlib.github.io/). Check that your radio is in the Hamlib list and note its **Hamlib model number** (`rigctl --list` shows them; install the tool first with `sudo apt install libhamlib-utils`, or browse the [list of radios supported by Hamlib](https://github.com/Hamlib/Hamlib/wiki/Supported-Radios)). You also need a way to connect it to the computer, typically a USB or serial CAT cable.
 
 ## Audio
 

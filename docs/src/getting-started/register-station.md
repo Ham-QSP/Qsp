@@ -1,6 +1,6 @@
 # Register your station
 
-{{#include ../includes/service-host.md}}
+{{#include ../../includes/service-host.md}}
 
 > **Provisional process.** The hosted QSP service is not open to the public yet, and registration is done by hand for now. It is planned to become self-service later, and this page will then change.
 

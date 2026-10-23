@@ -1,6 +1,6 @@
 # Operate from your browser
 
-{{#include ../includes/service-host.md}}
+{{#include ../../includes/service-host.md}}
 
 Once your agent is running and connected, you operate your station from the QSP web client in any browser.
 

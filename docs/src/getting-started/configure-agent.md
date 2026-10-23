@@ -1,6 +1,6 @@
 # Configure the agent
 
-{{#include ../includes/service-host.md}}
+{{#include ../../includes/service-host.md}}
 
 The agent reads `/etc/qsp-agent/config.toml`. Edit it as root:
 
@@ -41,7 +41,7 @@ rig_pathname = "/dev/ttyUSB0"
 serial_speed = "115200"
 ```
 
-- `model` is the Hamlib model number of your radio (`rigctl --list` shows them). The value `1` is Hamlib's dummy radio, which is handy to test the connection without a real rig.
+- `model` is the Hamlib model number of your radio (`rigctl --list` shows them, after `sudo apt install libhamlib-utils`; or see the [list of supported radios](https://github.com/Hamlib/Hamlib/wiki/Supported-Radios)). The value `1` is Hamlib's dummy radio, which is handy to test the connection without a real rig.
 - `rig_pathname` is the serial device of your CAT cable and `serial_speed` its speed. These entries are passed straight to Hamlib, so use the parameters Hamlib documents for your radio and connection type.
 
 ## Audio

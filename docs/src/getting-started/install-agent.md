@@ -1,5 +1,7 @@
 # Install the agent
 
+> **Status.** The hosted QSP service is not open yet. To use the agent you need an account from a service operator (see [Register your station](register-station.md)) or your own [self-hosted instance](../advanced/self-hosting.md).
+
 The agent is shipped as a `.deb` package for Debian-based Linux, including Raspberry Pi OS. Packages for 64-bit ARM (`arm64`) and Intel/AMD (`amd64`) are published on the [qsp-agent releases page](https://github.com/Ham-QSP/qsp-agent/releases).
 
 1. Check your architecture. On a Raspberry Pi with 64-bit Raspberry Pi OS this prints `arm64`:

@@ -9,7 +9,7 @@ QSP has two ends that matter to you:
 
 The QSP services are only used to **sign you in** and to **introduce your browser and your agent to each other**, so that they can open that direct connection. After the introduction, the audio and control never pass through them.
 
-<svg viewBox="0 0 760 330" role="img" aria-labelledby="hqw-title hqw-desc" style="width:100%;max-width:640px;height:auto;color:inherit" font-family="sans-serif" fill="currentColor">
+<svg viewBox="0 0 760 420" role="img" aria-labelledby="hqw-title hqw-desc" style="width:100%;max-width:640px;height:auto;color:inherit" font-family="sans-serif" fill="currentColor">
   <title id="hqw-title">How QSP connects your browser to your rig</title>
   <desc id="hqw-desc">Your browser and the QSP agent next to your rig are joined by a direct, two-way, peer-to-peer connection carrying audio and control. The QSP services, drawn above in dashed lines, are only used to sign in and to introduce the browser and the agent to each other.</desc>
   <rect x="250" y="10" width="260" height="68" rx="10" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 5"/>
@@ -32,6 +32,11 @@ The QSP services are only used to **sign you in** and to **introduce your browse
   <polygon points="508,235 484,219 484,251"/>
   <text x="380" y="209" text-anchor="middle" font-size="16" font-weight="bold">Direct connection</text>
   <text x="380" y="272" text-anchor="middle" font-size="14">audio + control</text>
+  <text x="380" y="292" text-anchor="middle" font-size="14">peer to peer (WebRTC)</text>
+  <line x1="620" y1="280" x2="620" y2="330" stroke="currentColor" stroke-width="2"/>
+  <text x="632" y="310" font-size="14">CAT + audio</text>
+  <rect x="550" y="330" width="140" height="46" rx="8" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="620" y="359" text-anchor="middle" font-size="16" font-weight="bold">Your rig</text>
 </svg>
 
 ## What this means for you

@@ -13,7 +13,7 @@ journalctl -u qsp-agent.service
 
 ## The agent cannot connect to the service
 
-- Check `url`, `agentId` and `agentSecret` in `[signaling_server]`. The URL must look like `wss://<service-host>/signaling/server/session` (use `ws://` only for a plain-HTTP self-hosted instance).
+- Check `url`, `agentId` and `agentSecret` in `[signaling_server]`. For the hosted service the URL has the form `wss://<service-host>/signaling/server/session`. For a self-hosted instance it is `ws://HOST:PORT/signaling/server/session`: the agent does not support `wss://` today, so that form only applies to the hosted service.
 - Check that the computer has internet access and can reach the service.
 - The agent keeps retrying with growing delays, so it will reconnect by itself when the service is back.
 
