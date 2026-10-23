@@ -26,6 +26,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
       SPRING_LIQUIBASE_DATABASE_CHANGE_LOG_TABLE: auth_databasechangelog
       SPRING_LIQUIBASE_DATABASE_CHANGE_LOG_LOCK_TABLE: auth_databasechangeloglock
+      # Honor X-Forwarded-* from the proxy so redirects (e.g. to /auth/login) keep the /auth prefix.
+      SERVER_FORWARD_HEADERS_STRATEGY: framework
       # Public issuer (the proxy strips the /auth prefix before the request reaches the app).
       SPRING_SECURITY_OAUTH2_AUTHORIZATIONSERVER_ISSUER: http://${QSP_HOST}:${QSP_PORT}/auth
       # Must equal the web client's redirect page exactly; also drives CORS allowed origins.
@@ -46,6 +48,9 @@ services:
       SPRING_R2DBC_URL: r2dbc:postgresql://db:5432/qsp
       SPRING_R2DBC_USERNAME: postgres
       SPRING_R2DBC_PASSWORD: ${POSTGRES_PASSWORD}
+      # Server identity shown to clients (GET /signaling/server/description and agent hello).
+      QSP_SERVERNAME: ${QSP_SERVER_NAME:-My QSP server}
+      QSP_SERVERDESCRIPTION: ${QSP_SERVER_DESCRIPTION:-Self hosted QSP server}
       # iss claim must be the public URL; keys are fetched over the internal network.
       SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER-URI: http://${QSP_HOST}:${QSP_PORT}/auth
       SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: http://auth:9000/oauth2/jwks
