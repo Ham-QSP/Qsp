@@ -9,7 +9,6 @@ services:
       POSTGRES_DB: qsp
     volumes:
       - db-data:/var/lib/postgresql
-      - ./db/init-signaling.sql:/docker-entrypoint-initdb.d/init-signaling.sql:ro,z
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d qsp"]
       interval: 3s
@@ -17,7 +16,7 @@ services:
       retries: 20
 
   auth:
-    image: f4fez/qsp-authentication-server:${QSP_AUTH_VERSION:-latest}
+    image: f4fez/qsp-authentication-server:${QSP_AUTH_VERSION:-0.1.1}
     depends_on:
       db: { condition: service_healthy }
     environment:
@@ -33,12 +32,17 @@ services:
       QSP_AUTHORIZATION_CLIENTS_PORTAL_REDIRECT-URI_0: http://${QSP_HOST}:${QSP_PORT}/login-redirect.html
 
   signaling:
-    image: f4fez/qsp-signaling-server:${QSP_SIGNALING_VERSION:-latest}
+    image: f4fez/qsp-signaling-server:${QSP_SIGNALING_VERSION:-0.1.1}
     depends_on:
       db: { condition: service_healthy }
       auth: { condition: service_started }
     environment:
-      # Schema comes from db/init-signaling.sql (see the note there); no Liquibase settings needed.
+      # Liquibase uses JDBC; the service itself uses R2DBC. Own tracking tables (changeset ids collide otherwise).
+      SPRING_LIQUIBASE_URL: jdbc:postgresql://db:5432/qsp
+      SPRING_LIQUIBASE_USER: postgres
+      SPRING_LIQUIBASE_PASSWORD: ${POSTGRES_PASSWORD}
+      SPRING_LIQUIBASE_DATABASE_CHANGE_LOG_TABLE: signaling_databasechangelog
+      SPRING_LIQUIBASE_DATABASE_CHANGE_LOG_LOCK_TABLE: signaling_databasechangeloglock
       SPRING_R2DBC_URL: r2dbc:postgresql://db:5432/qsp
       SPRING_R2DBC_USERNAME: postgres
       SPRING_R2DBC_PASSWORD: ${POSTGRES_PASSWORD}
@@ -47,7 +51,7 @@ services:
       SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: http://auth:9000/oauth2/jwks
 
   web:
-    image: f4fez/qsp-web:${QSP_WEB_VERSION:-latest}
+    image: f4fez/qsp-web:${QSP_WEB_VERSION:-0.1.1}
     environment:
       QSP_HOST: ${QSP_HOST}
       QSP_PORT: ${QSP_PORT}
