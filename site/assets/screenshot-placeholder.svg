@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Placeholder: screenshot of the QSP web client coming soon">
+  <!-- PLACEHOLDER: replace with a real capture of qsp-web (same 12:7 ratio works best). -->
+  <style>
+    .bg { fill: #f3f4f6; } .bar { fill: #e5e7eb; } .blk { fill: #d1d5db; } .txt { fill: #4b5563; } .sub { fill: #6b7280; } .frame { stroke: #9ca3af; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1b1f26; } .bar { fill: #252a33; } .blk { fill: #313845; } .txt { fill: #c9d1dc; } .sub { fill: #8b95a3; } .frame { stroke: #4b5563; }
+    }
+  </style>
+  <rect class="bg frame" x="1" y="1" width="1198" height="698" rx="14" fill="none" stroke-width="2"/>
+  <rect class="bar" x="2" y="2" width="1196" height="46" rx="12"/>
+  <circle class="blk" cx="32" cy="25" r="8"/><circle class="blk" cx="58" cy="25" r="8"/><circle class="blk" cx="84" cy="25" r="8"/>
+  <rect class="blk" x="80" y="110" width="560" height="120" rx="10"/>
+  <rect class="blk" x="680" y="110" width="440" height="120" rx="10"/>
+  <rect class="blk" x="80" y="270" width="1040" height="80" rx="10"/>
+  <rect class="blk" x="80" y="390" width="320" height="56" rx="10"/>
+  <rect class="blk" x="440" y="390" width="320" height="56" rx="10"/>
+  <rect class="blk" x="800" y="390" width="320" height="56" rx="10"/>
+  <text class="txt" x="600" y="560" text-anchor="middle" font-family="system-ui, sans-serif" font-size="44" font-weight="700">Screenshot coming soon</text>
+  <text class="sub" x="600" y="606" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26">Placeholder for the QSP web client</text>
+</svg>

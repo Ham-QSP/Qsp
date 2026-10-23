@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>QSP — Remote ham radio</title>
+  <meta name="description" content="QSP lets you operate your own transceiver from a web browser: frequency, mode, band and live audio, over a direct peer-to-peer connection.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Main">
+      <a class="brand" href="./">QSP</a>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="docs/">Docs</a></li>
+        <li><a href="https://github.com/Ham-QSP/Qsp">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <h1>Operate your radio from anywhere.</h1>
+      <p class="lead">QSP puts your own transceiver in a browser tab: tune, change mode and band, and hear the band live — from the sofa, the office or the other side of the world.</p>
+      <p class="lead">The hosted QSP service is not open yet &mdash; you can already <a href="docs/advanced/self-hosting.html">self-host it</a>.</p>
+      <p class="actions">
+        <a class="btn btn-primary" href="docs/getting-started/install-agent.html">Get started</a>
+        <a class="btn" href="docs/">Read the docs</a>
+      </p>
+    </section>
+
+    <figure class="screenshot wrap">
+      <img src="assets/screenshot-placeholder.svg" width="1200" height="700" alt="Placeholder image: a screenshot of the QSP web client is coming soon.">
+    </figure>
+
+    <section id="features" class="wrap section">
+      <h2>What QSP gives you</h2>
+      <ul class="tiles">
+        <li class="tile">
+          <h3>Just a browser</h3>
+          <p>Nothing to install on the computer you operate from. Open a page, sign in to a QSP service, and your rig is there.</p>
+        </li>
+        <li class="tile">
+          <h3>Live audio</h3>
+          <p>Hear the receiver in real time, with low-latency Opus audio streamed straight from your shack.</p>
+        </li>
+        <li class="tile">
+          <h3>Your rig, via Hamlib</h3>
+          <p>Frequency, mode, band and VFO control for the many transceivers Hamlib supports, over your usual CAT cable.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="how-it-works" class="wrap section">
+      <h2>How it works</h2>
+      <figure class="diagram">
+        <!-- Wide layout -->
+        <svg class="diagram-wide" viewBox="0 0 760 460" role="img" aria-labelledby="dw-title dw-desc">
+          <title id="dw-title">How QSP connects your browser to your rig</title>
+          <desc id="dw-desc">Your browser and the QSP agent next to your rig are joined by a direct, two-way, peer-to-peer connection carrying audio and control. The QSP services, drawn above in dashed lines, are only used to sign in and to introduce the browser and the agent to each other.</desc>
+          <!-- QSP services (dashed: only used to connect) -->
+          <rect class="d-svc" x="250" y="16" width="260" height="68" rx="10"/>
+          <text class="d-title" x="380" y="46" text-anchor="middle">QSP services</text>
+          <text class="d-sub" x="380" y="68" text-anchor="middle">only used to connect</text>
+          <line class="d-dash" x1="300" y1="84" x2="140" y2="258"/>
+          <line class="d-dash" x1="460" y1="84" x2="620" y2="258"/>
+          <text class="d-note" x="205" y="172" text-anchor="end">sign in</text>
+          <text class="d-note" x="555" y="172">sign in</text>
+          <text class="d-note" x="380" y="160" text-anchor="middle">introduce browser</text>
+          <text class="d-note" x="380" y="180" text-anchor="middle">and agent</text>
+          <!-- Browser -->
+          <rect class="d-box" x="30" y="260" width="220" height="90" rx="10"/>
+          <text class="d-title" x="140" y="300" text-anchor="middle">Your browser</text>
+          <text class="d-sub" x="140" y="324" text-anchor="middle">anywhere</text>
+          <!-- Agent -->
+          <rect class="d-box" x="510" y="260" width="220" height="90" rx="10"/>
+          <text class="d-title" x="620" y="300" text-anchor="middle">QSP agent</text>
+          <text class="d-sub" x="620" y="324" text-anchor="middle">next to your rig</text>
+          <!-- Direct connection (thick, two-way) -->
+          <line class="d-direct" x1="270" y1="305" x2="490" y2="305"/>
+          <polygon class="d-head" points="252,305 276,289 276,321"/>
+          <polygon class="d-head" points="508,305 484,289 484,321"/>
+          <text class="d-strong" x="380" y="279" text-anchor="middle">Direct connection</text>
+          <text class="d-label" x="380" y="342" text-anchor="middle">audio + control</text>
+          <text class="d-sub" x="380" y="362" text-anchor="middle">peer to peer (WebRTC)</text>
+          <!-- Rig -->
+          <line class="d-link" x1="620" y1="350" x2="620" y2="400"/>
+          <text class="d-sub" x="632" y="380">CAT + audio</text>
+          <rect class="d-box" x="550" y="400" width="140" height="46" rx="8"/>
+          <text class="d-label" x="620" y="429" text-anchor="middle">Your rig</text>
+        </svg>
+        <!-- Narrow (phone) layout -->
+        <svg class="diagram-narrow" viewBox="0 0 360 560" role="img" aria-labelledby="dn-title dn-desc">
+          <title id="dn-title">How QSP connects your browser to your rig</title>
+          <desc id="dn-desc">Your browser and the QSP agent next to your rig are joined by a direct, two-way, peer-to-peer connection carrying audio and control. The QSP services, drawn above in dashed lines, are only used to sign in and to introduce the browser and the agent to each other.</desc>
+          <rect class="d-svc" x="40" y="10" width="270" height="64" rx="10"/>
+          <text class="d-title" x="175" y="38" text-anchor="middle">QSP services</text>
+          <text class="d-sub" x="175" y="60" text-anchor="middle">only used to connect</text>
+          <line class="d-dash" x1="120" y1="74" x2="120" y2="168"/>
+          <polyline class="d-dash" points="310,42 342,42 342,405 222,405"/>
+          <text class="d-note" x="110" y="126" text-anchor="end">sign in</text>
+          <text class="d-note" x="132" y="116">introduce browser</text>
+          <text class="d-note" x="132" y="136">and agent</text>
+          <text class="d-note" x="332" y="396" text-anchor="end">sign in</text>
+          <rect class="d-box" x="20" y="170" width="200" height="70" rx="10"/>
+          <text class="d-title" x="120" y="200" text-anchor="middle">Your browser</text>
+          <text class="d-sub" x="120" y="222" text-anchor="middle">anywhere</text>
+          <line class="d-direct" x1="120" y1="260" x2="120" y2="350"/>
+          <polygon class="d-head" points="120,242 104,266 136,266"/>
+          <polygon class="d-head" points="120,368 104,344 136,344"/>
+          <text class="d-strong" x="146" y="286">Direct connection</text>
+          <text class="d-label" x="146" y="310">audio + control</text>
+          <text class="d-sub" x="146" y="332">peer to peer (WebRTC)</text>
+          <rect class="d-box" x="20" y="370" width="200" height="70" rx="10"/>
+          <text class="d-title" x="120" y="400" text-anchor="middle">QSP agent</text>
+          <text class="d-sub" x="120" y="422" text-anchor="middle">next to your rig</text>
+          <line class="d-link" x1="120" y1="440" x2="120" y2="494"/>
+          <text class="d-sub" x="132" y="472">CAT + audio</text>
+          <rect class="d-box" x="50" y="494" width="140" height="46" rx="8"/>
+          <text class="d-label" x="120" y="523" text-anchor="middle">Your rig</text>
+        </svg>
+        <figcaption>Once introduced, your browser and the agent talk to each other directly. Audio and control never pass through QSP servers.</figcaption>
+      </figure>
+
+      <div class="explain">
+        <div>
+          <h3>The agent</h3>
+          <p>A small program that runs on a Linux computer next to your rig — a Raspberry Pi is ideal. It drives the transceiver through Hamlib over CAT and captures its audio from your sound interface.</p>
+        </div>
+        <div>
+          <h3>The QSP services</h3>
+          <p>They check who you are and tell your browser and your agent how to reach each other. That is all: once the connection is up, they step aside.</p>
+        </div>
+        <div>
+          <h3>Your browser</h3>
+          <p>Connects straight to your agent, peer to peer, with WebRTC. Audio flows from the rig to you, control flows from you to the rig, over that one direct link.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="get-started" class="wrap section">
+      <h2>Get started in three steps</h2>
+      <ol class="steps">
+        <li>
+          <h3>Install the agent</h3>
+          <p>Install the QSP agent on a Linux machine next to your rig, connect the CAT and audio cables, and point it at your transceiver.</p>
+        </li>
+        <li>
+          <h3>Sign in</h3>
+          <p>Sign in to a QSP service from any browser. Your station and its agent show up once the agent is running.</p>
+        </li>
+        <li>
+          <h3>Operate</h3>
+          <p>Pick your station, connect, and work the band as if you were in the shack.</p>
+        </li>
+      </ol>
+      <p class="actions">
+        <a class="btn btn-primary" href="docs/getting-started/install-agent.html">Read the install guide</a>
+      </p>
+    </section>
+
+    <section class="band">
+      <div class="wrap band-inner">
+        <div>
+          <h2>Free and open source</h2>
+          <p>Every part of QSP is free software, developed in the open by radio amateurs. Want your own instance? A single <code>docker compose</code> file runs all the services on one machine.</p>
+        </div>
+        <p class="actions">
+          <a class="btn" href="docs/advanced/self-hosting.html">Self-host QSP</a>
+          <a class="btn" href="https://github.com/Ham-QSP/Qsp">Source on GitHub</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>QSP — remote operation for radio amateurs. Free software, <a href="https://github.com/Ham-QSP/Qsp">on GitHub</a>.</p>
+  </footer>
+</body>
+</html>
