@@ -1,0 +1,10 @@
+# Sub-projects: independent repositories (github.com/Ham-QSP/*)
+/qsp-agent/
+/qsp-authentication/
+/qsp-infra/
+/qsp-proto-files/
+/qsp-signaling-server/
+/qsp-web/
+
+# Brainstorming mockups
+/.superpowers/
