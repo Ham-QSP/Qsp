@@ -1,0 +1,14 @@
+[book]
+title = "QSP documentation"
+description = "User guide and advanced documentation for QSP, remote operation of your amateur radio station."
+language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
+
+[output.html]
+git-repository-url = "https://github.com/Ham-QSP/Qsp"
+edit-url-template = "https://github.com/Ham-QSP/Qsp/edit/main/docs/{path}"
+site-url = "/Qsp/docs/"
+additional-js = ["theme/home-link.js"]

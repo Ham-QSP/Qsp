@@ -1,0 +1,1 @@
+> **Placeholder.** `<service-host>` in this guide stands for the address of the QSP service. The example value is `qsp.example.org`, which is a placeholder and not a real server. Replace `<service-host>` with the actual address once the operator gives it to you.

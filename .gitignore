@@ -8,3 +8,6 @@
 
 # Brainstorming mockups
 /.superpowers/
+
+# mdbook build output
+/docs/book/
